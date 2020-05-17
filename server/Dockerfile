@@ -38,4 +38,4 @@ COPY . .
 
 #Expose port and start application
 #EXPOSE 9000
-CMD ["npm", "run", "dev"]
+CMD ["npm", "start"]
