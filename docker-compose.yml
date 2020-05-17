@@ -1,0 +1,66 @@
+# version: "3"
+# services:
+#     frontend:
+#         container_name: test_web
+#         build:
+#             context: ./client
+#             dockerfile: Dockerfile
+#         image: wk/test_web
+#         ports:
+#             - "3000:3000"
+#         volumes:
+#             - ./client:/mnt/c/Code/Projects/Test/React
+#     backend:
+#         container_name: test_server
+#         build:
+#             context: ./server
+#             dockerfile: Dockerfile
+#         image: wk/test_server
+#         ports:
+#             - "9000:9000"
+#         volumes:
+#             - ./server:/mnt/c/Code/Projects/Test/Node
+
+version: "3"
+
+services:
+
+###########################################
+# Setup server container
+###########################################
+    server:
+        build: ./server
+        expose:
+            - ${APP_SERVER_PORT}
+        environment: 
+            API_HOST: ${API_HOST}
+            APP_SERVER_PORT: ${APP_SERVER_PORT}
+        ports: 
+            - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+        volumes:
+            - ./server/config:/usr/src/app/test-server/config
+            - ./server/controllers:/usr/src/app/test-server/controllers
+            - ./server/logs:/usr/src/app/test-server/logs
+            - ./server/utils:/usr/src/app/test-server/utils
+        command: npm run dev
+
+###########################################
+# Setup client container
+###########################################
+    client:
+        build: ./client
+        environment:
+            - REACT_APP_PORT=${REACT_APP_PORT}
+        expose:
+            - ${REACT_APP_PORT}
+        ports: 
+            - ${REACT_APP_PORT}:${REACT_APP_PORT}
+        volumes:
+            - ./client/src:/usr/src/app/test-client/src
+            - ./client/public:/usr/src/app/test-client/public
+        links:
+            - server
+        command: npm run start
+
+
+
