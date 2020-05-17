@@ -1,0 +1,50 @@
+{
+  "name": "test",
+  "version": "0.9.0",
+  "description": "Test",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "babel app.ts -d dist",
+    "lint": "eslint . --quiet",
+    "test": "jest --coverage tests/*.test.js",
+    "start": "ts-node app.ts"
+  },
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "async": "^2.4.1",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.17.1",
+    "handlebars": "^4.0.10",
+    "moment": "2.18.1",
+    "morgan": "^1.8.2",
+    "multer": "^1.3.0",
+    "querystring": "^0.2.0",
+    "winston": "^2.4.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "@types/events": "^1.2.0",
+    "@types/inflection": "^1.5.28",
+    "@types/lodash": "^4.14.117",
+    "@types/mailgun-js": "^0.16.1",
+    "@types/multer": "^1.3.7",
+    "@types/node": "^10.10.1",
+    "@types/node-schedule": "^1.2.2",
+    "@types/nodemailer": "^4.6.5",
+    "@types/papaparse": "^4.5.5",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.3.0",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4",
+    "typings": "^2.1.1"
+  }
+}
