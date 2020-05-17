@@ -17,10 +17,10 @@ COPY package.json .
 COPY package-lock.json .
 
 RUN npm install
-RUN npm update
+#RUN npm update
 # Copy app source code
 COPY . .
 
 #Expose port and start application
-#EXPOSE 9000
+EXPOSE 9000
 CMD ["npm", "run", "dev"]
