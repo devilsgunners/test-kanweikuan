@@ -10,8 +10,8 @@
 
 FROM node:12
 # Create app directory
-RUN mkdir /app
-WORKDIR /app
+RUN mkdir -p /usr/src/app/test-client
+WORKDIR /usr/src/app/test-client
 # Install app dependencies
 COPY package.json .
 COPY package-lock.json .
@@ -21,5 +21,5 @@ RUN npm install
 COPY . .
 
 #Expose port and start application
-#EXPOSE 3000
-CMD ["npm", "start"]
+#EXPOSE 9000
+CMD ["npm", "run"]
