@@ -42,7 +42,7 @@ services:
             - ./server/controllers:/usr/src/app/test-server/controllers
             - ./server/logs:/usr/src/app/test-server/logs
             - ./server/utils:/usr/src/app/test-server/utils
-        command: npm run dev
+        command: npm start
 
 ###########################################
 # Setup client container
@@ -60,7 +60,7 @@ services:
             - ./client/public:/usr/src/app/test-client/public
         links:
             - server
-        command: npm run start
+        command: npm start
 
 
 
