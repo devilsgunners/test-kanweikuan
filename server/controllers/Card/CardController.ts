@@ -49,10 +49,6 @@ class CardController {
                         
                         // Filter out the distributed cards
                         cards = cards.filter(function(value, index, arr){ return index != randNumber;});
-                        console.log('randNumber: ' + randNumber);
-                        console.log('totalcardleft: ' + totalCardLeft);
-                        console.log('randCard: ' + randCard);
-                        console.log(cards);
 
                         // Minus one for every distributed card
                         totalCardLeft = totalCardLeft - 1;
