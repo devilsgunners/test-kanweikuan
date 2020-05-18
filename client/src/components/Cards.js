@@ -19,7 +19,7 @@ class Cards extends Component {
   callAPI(numberOfPerson) {
     console.log("no. of person" + this.state.numberOfPerson);
 
-    fetch('http://localhost:9001/card/distributecards', {
+    fetch('http://localhost:9000/card/distributecards', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
