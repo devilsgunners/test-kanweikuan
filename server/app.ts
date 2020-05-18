@@ -36,6 +36,6 @@ app.get('/ping', function (req, res, next) {
     return res.status(200).json("ok");
 });
 
-http.listen(9001, () => {
+http.listen(9000, () => {
     console.log("Service listening on port 9000")
 })
