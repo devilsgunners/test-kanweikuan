@@ -45,8 +45,6 @@ services:
     client:
         build: ./client
         stdin_open: true
-        ports: 
-            - 4000:4000
         volumes:
             - ./client/src:/usr/src/app/test-client/src
             - ./client/public:/usr/src/app/test-client/public

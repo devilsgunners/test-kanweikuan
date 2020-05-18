@@ -16,11 +16,11 @@ WORKDIR /usr/src/app/test-client
 COPY package.json .
 COPY package-lock.json .
 
-RUN npm install
+#RUN npm install
 #RUN npm update
 # Copy app source code
 COPY . .
 
 #Expose port and start application
-EXPOSE 4000
+#EXPOSE 4000
 CMD ["npm", "start"]
