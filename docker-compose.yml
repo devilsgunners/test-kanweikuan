@@ -50,6 +50,7 @@ services:
 ###########################################
     client:
         build: ./client
+        stdin_open: true
         #environment:
         #    - REACT_APP_PORT=${REACT_APP_PORT}
         #expose:
