@@ -32,8 +32,6 @@ services:
         build: ./server
         expose:
             - ${APP_SERVER_PORT}
-        environment: 
-            - APP_SERVER_PORT=${APP_SERVER_PORT}
         ports: 
             - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
         volumes:
@@ -49,8 +47,6 @@ services:
     client:
         build: ./client
         stdin_open: true
-        environment:
-            - REACT_APP_PORT=${REACT_APP_PORT}
         expose:
             - ${REACT_APP_PORT}
         ports: 
